@@ -63,4 +63,16 @@ public class ItemsTest {
 
         assertThat(actualTotalAmount, is(equalTo(13.74)));
     }
+
+    @Test
+    public void formattedTotalSalesTaxShouldBeProduced() {
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
+        Items items = new Items(itemList);
+
+        String actualFormattedTotalSalesTax = items.formattedTotalSalesTax();
+
+        assertThat(actualFormattedTotalSalesTax, is(equalTo("Sales Taxes : 1.75\n")));
+    }
 }

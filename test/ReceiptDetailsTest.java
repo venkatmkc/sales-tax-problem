@@ -15,9 +15,9 @@ public class ReceiptDetailsTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         when(items.toString()).
-                thenReturn("1 music CD : 1.69\n" +
-                        "Sales Taxes : 0.15\n" +
-                        "Total : 1.84");
+                thenReturn("1 music CD : 1.69\n");
+        when(items.formattedTotalSalesTax()).
+                thenReturn("Sales Taxes : 0.15\n");
     }
 
     @Test
@@ -26,6 +26,6 @@ public class ReceiptDetailsTest {
 
         String actualFormattedReceiptDetails = receiptDetails.toString();
 
-        assertThat(actualFormattedReceiptDetails, is(equalTo("1 music CD : 1.69\nSales Taxes : 0.15\nTotal : 1.84\n")));
+        assertThat(actualFormattedReceiptDetails, is(equalTo("1 music CD : 1.69\nSales Taxes : 0.15\n")));
     }
 }

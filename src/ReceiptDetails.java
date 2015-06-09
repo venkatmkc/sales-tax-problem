@@ -7,6 +7,6 @@ public class ReceiptDetails {
 
     @Override
     public String toString() {
-        return items.toString() + "\n";
+        return items.toString() + items.formattedTotalSalesTax();
     }
 }

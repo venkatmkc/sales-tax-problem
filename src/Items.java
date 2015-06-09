@@ -31,4 +31,8 @@ public class Items {
         }
         return totalAmount;
     }
+
+    public String formattedTotalSalesTax() {
+        return "Sales Taxes : " + totalSalesTax() + "\n";
+    }
 }
