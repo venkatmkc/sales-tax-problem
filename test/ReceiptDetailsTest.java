@@ -31,7 +31,7 @@ public class ReceiptDetailsTest {
     @Test
     public void formattedReceiptDetailsShouldBeProduced() {
         ReceiptDetails receiptDetails = new ReceiptDetails(items, salesTax, total);
-        
+
         String actualFormattedReceiptDetails = receiptDetails.toString();
 
         assertThat(actualFormattedReceiptDetails, is(equalTo("1 music CD : 1.69\nSales Taxes : 0.15\nTotal : 1.84")));
