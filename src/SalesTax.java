@@ -1,2 +1,3 @@
-public class SalesTax {
+public interface SalesTax {
+    public double salesTax();
 }

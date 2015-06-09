@@ -1,4 +1,4 @@
-public class Item {
+public class Item implements SalesTax{
     private int quantity;
     private String name;
     private double price;
@@ -12,5 +12,13 @@ public class Item {
     @Override
     public String toString() {
         return "" + quantity + " " + name + " : " + price;
+    }
+
+    public double salesTax() {
+        double salesTax = (price * 10)/100;
+        salesTax *= 100;
+        salesTax = Math.round(salesTax);
+        salesTax /= 100;
+        return salesTax;
     }
 }

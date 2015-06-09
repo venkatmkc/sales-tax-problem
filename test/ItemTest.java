@@ -13,4 +13,13 @@ public class ItemTest {
 
         assertThat(actualFormattedItemDetails, is(equalTo("1 music CD : 1.69")));
     }
+
+    @Test
+    public void salesTaxShouldBeComputed() {
+        Item item = new Item(1, "music CD", 1.69);
+
+        double actualSalesTax = item.salesTax();
+
+        assertThat(actualSalesTax, is(equalTo(0.17)));
+    }
 }
