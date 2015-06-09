@@ -22,9 +22,11 @@ public class ItemsTest {
         when(itemTwo.toString()).
                 thenReturn("item two");
         when(itemOne.salesTax())
-                .thenReturn(1.0);
+                .thenReturn(1.25);
         when(itemTwo.salesTax())
                 .thenReturn(0.50);
+        when(itemOne.getPrice()).
+                thenReturn(12.49);
     }
 
     @Test
@@ -48,6 +50,17 @@ public class ItemsTest {
 
         double actualSalesTaxtotal = items.totalSalesTax();
 
-        assertThat(actualSalesTaxtotal, is(equalTo(1.50)));
+        assertThat(actualSalesTaxtotal, is(equalTo(1.75)));
+    }
+
+    @Test
+    public void totalAmountShouldBeCalculated() {
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        itemList.add(itemOne);
+        Items items = new Items(itemList);
+
+        double actualTotalAmount = items.totalAmount();
+
+        assertThat(actualTotalAmount, is(equalTo(13.74)));
     }
 }

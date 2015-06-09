@@ -22,4 +22,13 @@ public class Items {
             totalSalesTax += item.salesTax();
         return  totalSalesTax;
     }
+
+    public double totalAmount() {
+        double totalAmount = 0;
+        for(Item item : itemList) {
+            totalAmount += item.getPrice();
+            totalAmount += item.salesTax();
+        }
+        return totalAmount;
+    }
 }

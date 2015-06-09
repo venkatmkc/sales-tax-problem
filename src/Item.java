@@ -9,6 +9,9 @@ public class Item implements SalesTax {
         this.price = price;
     }
 
+    public double getPrice() {
+        return price;
+    }
     @Override
     public String toString() {
         return "" + quantity + " " + name + " : " + price;

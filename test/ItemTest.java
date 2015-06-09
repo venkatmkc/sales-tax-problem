@@ -22,4 +22,5 @@ public class ItemTest {
 
         assertThat(actualSalesTax, is(equalTo(0.17)));
     }
+
 }
