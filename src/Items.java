@@ -15,4 +15,11 @@ public class Items {
         }
         return formattedItemList;
     }
+
+    public double totalSalesTax() {
+        double totalSalesTax = 0;
+        for(Item item : itemList)
+            totalSalesTax += item.salesTax();
+        return  totalSalesTax;
+    }
 }

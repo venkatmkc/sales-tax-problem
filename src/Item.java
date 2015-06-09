@@ -1,4 +1,4 @@
-public class Item implements SalesTax{
+public class Item implements SalesTax {
     private int quantity;
     private String name;
     private double price;
@@ -15,7 +15,7 @@ public class Item implements SalesTax{
     }
 
     public double salesTax() {
-        double salesTax = (price * 10)/100;
+        double salesTax = (price * 10) / 100;
         salesTax *= 100;
         salesTax = Math.round(salesTax);
         salesTax /= 100;

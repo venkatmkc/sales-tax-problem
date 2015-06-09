@@ -21,6 +21,10 @@ public class ItemsTest {
                 thenReturn("item one");
         when(itemTwo.toString()).
                 thenReturn("item two");
+        when(itemOne.salesTax())
+                .thenReturn(1.0);
+        when(itemTwo.salesTax())
+                .thenReturn(0.50);
     }
 
     @Test
@@ -33,5 +37,17 @@ public class ItemsTest {
         String actualFormattedItemList = items.toString();
 
         assertThat(actualFormattedItemList, is(equalTo("item one\nitem two\n")));
+    }
+
+    @Test
+    public void totalSalesTaxShouldBeCalculated() {
+        ArrayList<Item> itemList = new ArrayList<Item>();
+        itemList.add(itemOne);
+        itemList.add(itemTwo);
+        Items items = new Items(itemList);
+
+        double actualSalesTaxtotal = items.totalSalesTax();
+
+        assertThat(actualSalesTaxtotal, is(equalTo(1.50)));
     }
 }
